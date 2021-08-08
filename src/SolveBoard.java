@@ -1,5 +1,5 @@
 public class SolveBoard {
-    public static void solveTheBoard()
+    public static boolean solveTheBoard()
     {
         for(int i = 0; i<=8; i++)
         {
@@ -12,12 +12,27 @@ public class SolveBoard {
                         if(Solver.checkifPossible(i, j, pos))
                         {
                             Board.grid[i][j] = pos;
-                            solveTheBoard();
+                            if(solveTheBoard())
+                                return true;
+                            Board.grid[i][j] = 0;
                         }
                     }
+                    return false;
                 }
             }
         }
+        return checkDone();
+    }
+
+    public static boolean checkDone()
+    {
+        for(int[] row : Board.grid)
+        {
+            for(int cell: row)
+                if(cell == 0)
+                    return false;
+        }
+        return true;
     }
 
 }

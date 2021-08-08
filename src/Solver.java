@@ -50,17 +50,17 @@ public class Solver {
     {
         int rowDivide = row/3;
         int rowRemainder = row%3;
-        int startRow = rowDivide*rowRemainder;
+        int startRow = rowDivide*3;
 
         int columnDivide = column/3;
         int columnRemainder = column%3;
-        int startColumn = columnDivide*columnRemainder;
+        int startColumn = columnDivide*3;
 
         ArrayList<Integer> temp = new ArrayList();
 
-        for(int i = startRow; i<=startRow+3; i++)
+        for(int i = startRow; i<=startRow+2; i++)
         {
-            for(int j = startColumn; j<=startColumn+3; j++)
+            for(int j = startColumn; j<=startColumn+2; j++)
             {
                 temp.add(Board.grid[i][j]);
             }

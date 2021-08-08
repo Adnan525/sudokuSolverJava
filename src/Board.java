@@ -31,6 +31,7 @@ public class Board {
         System.out.println("=====================test=====================");
         SolveBoard.solveTheBoard();
         System.out.println(getGrid());
+//        System.out.println(Solver.checkSquare(0,8,9));
     }
 
 }
