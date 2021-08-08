@@ -19,6 +19,13 @@ public class Solver {
         check.put(new int[] {2,1}, new int[] {0,0,0,2,1,0,1,2});
         check.put(new int[] {2,2}, new int[] {0,0,0,1,1,0,1,1});
     }
+
+    public static boolean checkifPossible(int row, int column, int n)
+    {
+        return checkRow(row, n) && checkColumn(column, n) && checkSquare(row, column, n);
+
+    }
+
     public static boolean checkRow(int row, int n)
     {
         int[] curRow = Board.grid[row];

@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.StringJoiner;
+
 public class Board {
     public static int[][] grid = {
             {3, 0, 6, 5, 0, 8, 4, 0, 0},
@@ -11,11 +14,23 @@ public class Board {
             {0, 0, 5, 2, 0, 6, 3, 0, 0}
     };
 
-    public static void main(String[] args)
+    public static String getGrid()
     {
-        System.out.println(Solver.checkRow(0, 6));
-        System.out.println(Solver.checkColumn(0,3));
-        System.out.println(Solver.checkSquare(0,0,3));
+        String temp = "";
+        for(int[] row : grid)
+        {
+            for(int cell: row)
+                temp+=Integer.toString(cell)+" ";
+            temp+="\n";
+        }
+        return temp.toString();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(getGrid());
+        System.out.println("=====================test=====================");
+        SolveBoard.solveTheBoard();
+        System.out.println(getGrid());
     }
 
 }
